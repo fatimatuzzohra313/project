@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import ThemeToggle from '../ui/ThemeToggle';
 import { NavItem } from '../../types';
 import xaviaLogo from '../../assets/xavia-logo.png';
+import lightLogo from '../../assets/xavia-dark-logo.png';
+import { useTheme } from '../../context/ThemeContext';
 
 const navItems: NavItem[] = [
   { name: 'Home', path: '/' },
@@ -17,7 +19,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-
+  const { theme } = useTheme();
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -34,19 +36,18 @@ const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
           ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-sm'
           : 'bg-transparent'
-      }`}
+        }`}
     >
       <div className="container flex items-center justify-between h-16 md:h-20">
-        <NavLink 
+        <NavLink
           to="/"
           className="text-2xl font-display font-bold text-primary-600 dark:text-primary-400"
         >
           {/* Xavia<span className="text-accent-600 dark:text-accent-500">Solutions</span> */}
-          <img src={xaviaLogo} alt="Xavia Solutions" className="h-10" />
+          <img src={theme === "dark" ? xaviaLogo : lightLogo} alt="Xavia Solutions" className="h-10" />
         </NavLink>
 
         {/* Desktop Navigation */}
@@ -55,7 +56,7 @@ const Navbar: React.FC = () => {
             <NavLink
               key={item.name}
               to={item.path}
-              className={({ isActive }) => 
+              className={({ isActive }) =>
                 `nav-link ${isActive ? 'active' : ''}`
               }
             >
@@ -95,11 +96,10 @@ const Navbar: React.FC = () => {
                 <NavLink
                   key={item.name}
                   to={item.path}
-                  className={({ isActive }) => 
-                    `block px-4 py-2 text-lg ${
-                      isActive 
-                        ? 'text-primary-600 dark:text-primary-400 font-medium'
-                        : 'text-gray-700 dark:text-gray-300'
+                  className={({ isActive }) =>
+                    `block px-4 py-2 text-lg ${isActive
+                      ? 'text-primary-600 dark:text-primary-400 font-medium'
+                      : 'text-gray-700 dark:text-gray-300'
                     }`
                   }
                   onClick={() => setIsOpen(false)}
