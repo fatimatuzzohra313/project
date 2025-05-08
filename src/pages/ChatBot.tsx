@@ -21,7 +21,7 @@ import {
 } from 'firebase/auth';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import './ChatBot.css';
+import './chatBot.css';
 import { Bot, Send, X } from 'lucide-react';
 
 interface Message {
