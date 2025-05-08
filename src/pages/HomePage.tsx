@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
       <FeaturedServices />
       <FeaturedProjects />
       <Testimonials />
-      <ChatBot/>
+     
       <CallToAction />
     </>
   );
