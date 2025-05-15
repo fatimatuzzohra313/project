@@ -17,7 +17,7 @@ const ServicesList: React.FC = () => {
   };
 
   return (
-    <motion.div 
+    <motion.div
       variants={containerVariants}
       initial="hidden"
       animate="visible"
@@ -41,29 +41,26 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   return (
     <Card className="group p-8 hover:translate-y-[-10px]">
       <div className="relative">
-        <div className="mb-8">
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full blur-lg opacity-0 group-hover:opacity-70 transition-opacity duration-500" />
-            <div className="relative p-6 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 rounded-full w-fit">
-              {IconComponent && (
-                <IconComponent 
-                  size={32} 
-                  className="text-transparent bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text" 
-                />
-              )}
-            </div>
+        <div className="mb-8 flex justify-center ">
+          <div className="relative flex items-center  justify-center w-20 h-20 rounded-full bg-gradient-to-r from-red-700 to-red-900 shadow-lg">
+            {IconComponent && (
+              <IconComponent
+                size={36}
+                className="text-white"
+              />
+            )}
           </div>
         </div>
-        
-        <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">
+
+        <h3 className="text-2xl font-bold mb-2  text-primary-500 dark:text-inherit pl-2">
           {service.title}
         </h3>
-        
-        <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+
+        <p className=" text-gray-600 dark:text-gray-400 leading-relaxed text-wrap pl-2 pb-3 ">
           {service.description}
         </p>
 
-        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-500/10 to-accent-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute right-0 w-24 h-59 bg-gradient-to-br from-primary-500/10 to-accent-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
     </Card>
   );
