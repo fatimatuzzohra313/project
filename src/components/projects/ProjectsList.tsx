@@ -8,8 +8,8 @@ const categories = ['All', 'Mobile Apps', 'Fintech Apps', 'Business Apps', 'E-Co
 const ProjectsList: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
-  const filteredProjects = selectedCategory === 'All' 
-    ? projects 
+  const filteredProjects = selectedCategory === 'All'
+    ? projects
     : projects.filter(project => project.category === selectedCategory);
 
   const containerVariants = {
@@ -21,10 +21,10 @@ const ProjectsList: React.FC = () => {
       }
     }
   };
-
+  console.log(selectedCategory, filteredProjects);
   return (
     <div>
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         className="flex flex-wrap gap-3 mb-12 justify-center"
@@ -35,18 +35,18 @@ const ProjectsList: React.FC = () => {
             onClick={() => setSelectedCategory(category)}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className={`px-6 py-3 rounded-full text-sm md:text-base transition-all duration-300 ${
-              selectedCategory === category 
-                ? 'bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-lg' 
+            className={`px-6 py-3 rounded-full text-sm md:text-base transition-all duration-300 ${selectedCategory === category
+                ? 'bg-gradient-to-r from-primary-600 to-accent-600 text-white shadow-lg'
                 : 'bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-            }`}
+              }`}
           >
             {category}
           </motion.button>
         ))}
       </motion.div>
 
-      <motion.div 
+      <motion.div
+        key={selectedCategory} // <-- add this line
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -65,8 +65,8 @@ const ProjectsList: React.FC = () => {
             >
               <Card className="h-full overflow-hidden flex flex-col group">
                 <div className="relative overflow-hidden h-56">
-                  <motion.img 
-                    src={project.image} 
+                  <motion.img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover"
                     whileHover={{ scale: 1.1 }}
@@ -85,8 +85,8 @@ const ProjectsList: React.FC = () => {
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, i) => (
-                      <span 
-                        key={i} 
+                      <span
+                        key={i}
                         className="text-sm bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 px-3 py-1 rounded-full"
                       >
                         {tag}

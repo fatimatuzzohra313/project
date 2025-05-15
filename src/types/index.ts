@@ -1,8 +1,9 @@
 export interface ServiceItem {
   id: number;
-  title: string;
+    title: string;
   icon: string;
   description: string;
+  // image?: string;
 }
 
 export interface ProjectItem {
