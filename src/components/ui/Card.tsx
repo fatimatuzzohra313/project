@@ -22,9 +22,9 @@ const Card: React.FC<CardProps> = ({ children, className = '', isGlass = false }
       ref={ref}
       style={{ scale }}
       initial={{ opacity: 0, y: 50, rotateX: -15 }}
-      animate={inView ? { 
-        opacity: 1, 
-        y: 0, 
+      animate={inView ? {
+        opacity: 1,
+        y: 0,
         rotateX: 0,
         transition: {
           type: "spring",
@@ -33,7 +33,7 @@ const Card: React.FC<CardProps> = ({ children, className = '', isGlass = false }
           mass: 1
         }
       } : {}}
-      whileHover={{ 
+      whileHover={{
         scale: 1.02,
         rotateY: 5,
         transition: {
@@ -42,7 +42,7 @@ const Card: React.FC<CardProps> = ({ children, className = '', isGlass = false }
           damping: 10
         }
       }}
-      className={`
+      className={`group
         ${isGlass ? 'backdrop-blur-xl bg-white/10 dark:bg-gray-800/10' : 'bg-gradient-to-br from-white via-white to-gray-50 dark:from-gray-800 dark:via-gray-800 dark:to-gray-900'}
         rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.12)]
         dark:shadow-[0_8px_30px_rgba(0,0,0,0.3)]
@@ -55,13 +55,16 @@ const Card: React.FC<CardProps> = ({ children, className = '', isGlass = false }
       `}
     >
       <div className="relative overflow-hidden rounded-[2rem] h-full">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 to-accent-500/10 dark:from-primary-500/5 dark:to-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-        <div className="relative z-10 h-full">
-          {children}
-        </div>
+
+{/* <div className="absolute inset-0 bg-gradient-to-br from-primary-500/50 to-accent-500/10 dark:from-primary-500/5 dark:to-accent-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 h-100"/> */}
+          <div className="relative z-10 h-full">
+             {children}
+          </div>
       </div>
     </motion.div>
   );
 };
 
 export default Card;
+
+// ...existing code ...

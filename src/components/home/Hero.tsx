@@ -55,16 +55,18 @@ const Hero: React.FC = () => {
           >
             <motion.div variants={itemVariants}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-secondary-950 dark:text-secondary-50">
-                Transforming Ideas into <span className="bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent">Digital Reality</span>
+                Transforming Ideas into {" "}
+                <span className="dark:bg-gradient-to-r text-red-600 dark:from-primary-700 dark:to-accent-500 dark:bg-clip-text dark:text-transparent">Digital Reality</span>
               </h1>
+
             </motion.div>
-            
+
             <motion.div variants={itemVariants}>
               <p className="text-lg md:text-xl text-secondary-600 dark:text-secondary-300 mb-8">
                 We build exceptional software solutions that drive innovation and business growth.
               </p>
             </motion.div>
-            
+
             <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center md:justify-start">
               <Link to="/services">
                 <Button variant="primary" size="lg" className="bg-primary-500 hover:bg-primary-600 text-white shadow-lg hover:shadow-glow transition-all">
@@ -78,7 +80,7 @@ const Hero: React.FC = () => {
               </Link>
             </motion.div>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -91,12 +93,13 @@ const Hero: React.FC = () => {
                 alt="Digital Solutions"
                 className="w-full h-auto rounded-lg"
               />
-              <div className="absolute -bottom-6 -left-6 bg-white/10 backdrop-blur-lg px-5 py-3 rotate-[-3deg] rounded-xl border border-white/20">
-                <span className="text-primary-500 dark:text-primary-400 font-semibold">Expert Solutions</span>
+              <div className="absolute -top-7 -right-6 px-5 py-3 rotate-[3deg] rounded-xl border dark:border-white/15 bg-white/10 backdrop-blur-lg">
+                <span className="text-primary-500 dark:text-primary-400 font-semibold drop-shadow">Innovation</span>
               </div>
-              <div className="absolute -top-6 -right-6 bg-white/10 backdrop-blur-lg px-5 py-3 rotate-[3deg] rounded-xl border border-white/20">
-                <span className="text-accent-500 dark:text-accent-400 font-semibold">Innovation</span>
+              <div className="absolute -bottom-6 -left-6 px-5 py-3 rotate-[-1deg] rounded-xl border dark:border-white/15 dark:bg-white/10 backdrop-blur-lg">
+                <span className="text-primary-500 dark:text-primary-400 font-semibold drop-shadow">Expert Solutions</span>
               </div>
+
             </div>
           </motion.div>
         </div>
