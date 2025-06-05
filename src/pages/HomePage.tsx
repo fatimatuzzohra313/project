@@ -5,11 +5,13 @@ import FeaturedProjects from '../components/home/FeaturedProjects';
 import Testimonials from '../components/home/Testimonials';
 import CallToAction from '../components/home/CallToAction';
 import ChatBot from './ChatBot';
+import ClientsSlider from '../components/home/Client';
 
 const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
+      <ClientsSlider/>
       <FeaturedServices />
       <FeaturedProjects />
       <Testimonials />
