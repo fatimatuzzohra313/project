@@ -7,7 +7,7 @@ const ContactInfo: React.FC = () => {
     {
       icon: <MapPin size={24} />,
       title: 'Our Location',
-      content: 'Suit #302, 3rd Floor, Alfalah Homes, 76/P, Allama Iqbal Road, PECHS Block 2, Karachi',
+      content: 'Suit #302, 3rd Floor, Alfalah Homes, 76/P, Allama Iqbal Road, PECHS Block 2, Karachi-Pakistan',
     },
     {
       icon: <Phone size={24} />,
@@ -23,7 +23,7 @@ const ContactInfo: React.FC = () => {
     {
       icon: <Clock size={24} />,
       title: 'Working Hours',
-      content: 'Monday - Friday: 9:00 AM - 6:00 PM',
+      content: 'Monday - Friday',
     },
   ];
 

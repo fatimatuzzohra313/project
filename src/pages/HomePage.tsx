@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
       <ClientsSlider/>
       <FeaturedServices />
       <FeaturedProjects />
-      <Testimonials />
+      {/* <Testimonials /> */}
      
       <CallToAction />
     </>

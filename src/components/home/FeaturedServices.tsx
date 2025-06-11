@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import Card from '../ui/Card';
 import { services } from '../../data/services';
 import * as LucideIcons from 'lucide-react';
+import { handleClick } from '../top';
 
 const FeaturedServices: React.FC = () => {
   // Only show 6 services on the home page
@@ -44,9 +45,9 @@ const FeaturedServices: React.FC = () => {
                   </div>
                   <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                   <p className="text-gray-600 dark:text-gray-400 mb-4 flex-grow">{service.description}</p>
-                  <Link to={`/services`} className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline mt-auto">
+                  {/* <Link to={`/services`} className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline mt-auto">
                     Learn more <ArrowRight size={16} className="ml-1" />
-                  </Link>
+                  </Link> */}
                 </Card>
               </motion.div>
             );
@@ -59,6 +60,7 @@ const FeaturedServices: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn btn-primary"
+              onClick={handleClick}
             >
               View All Services
             </motion.button>

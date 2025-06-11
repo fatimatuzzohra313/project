@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import Card from '../ui/Card';
 import { projects } from '../../data/projects';
+import { handleClick } from '../top';
 
 const FeaturedProjects: React.FC = () => {
   // Only show 4 projects on the home page
@@ -58,9 +59,9 @@ const FeaturedProjects: React.FC = () => {
                       </span>
                     ))}
                   </div>
-                  <Link to={`/projects`} className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline mt-auto">
+                  {/* <Link to={`/projects`} className="inline-flex items-center text-primary-600 dark:text-primary-400 font-medium hover:underline mt-auto">
                     View details <ArrowRight size={16} className="ml-1" />
-                  </Link>
+                  </Link> */}
                 </div>
               </Card>
             </motion.div>
@@ -73,6 +74,7 @@ const FeaturedProjects: React.FC = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="btn btn-primary"
+              onClick={handleClick}
             >
               View All Projects
             </motion.button>

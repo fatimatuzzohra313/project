@@ -15,16 +15,14 @@ const Footer: React.FC = () => {
               Delivering exceptional software solutions and digital experiences that transform businesses.
             </p>
             <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
+              <a target='blank' href="https://www.facebook.com/xaviasolutions" className="text-gray-400 hover:text-primary-400 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
-                <Twitter size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
+             
+              <a target='blank' href="https://www.instagram.com/xaviasol/?igsh=bnFuMmxwdXNmNg%3D%3D#" className="text-gray-400 hover:text-primary-400 transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-gray-400 hover:text-primary-400 transition-colors">
+              <a target='blank' href="https://www.linkedin.com/company/xaviasolutions/" className="text-gray-400 hover:text-primary-400 transition-colors">
                 <Linkedin size={20} />
               </a>
             </div>
@@ -38,6 +36,7 @@ const Footer: React.FC = () => {
               <li><Link to="/services" className="hover:text-primary-400 transition-colors">UX Design</Link></li>
               <li><Link to="/services" className="hover:text-primary-400 transition-colors">App Modernization</Link></li>
               <li><Link to="/services" className="hover:text-primary-400 transition-colors">Cloud Services</Link></li>
+              <li><Link to="/services" className="hover:text-primary-400 transition-colors">Security</Link></li>
             </ul>
           </div>
 
@@ -56,7 +55,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin size={20} className="mr-2 text-primary-400 flex-shrink-0 mt-1" />
-                <span>Suit #302, 3rd Floor, Alfalah Homes, 76/P, Allama Iqbal Road, PECHS Block 2, Karachi</span>
+                <span>Suit #302, 3rd Floor, Alfalah Homes, 76/P, Allama Iqbal Road, PECHS Block 2, Karachi-Pakistan</span>
               </li>
               <li className="flex items-center">
                 <Phone size={20} className="mr-2 text-primary-400 flex-shrink-0" />

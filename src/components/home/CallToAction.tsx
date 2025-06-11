@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
+import { handleClick } from '../top';
 
 const CallToAction: React.FC = () => {
   return (
@@ -32,6 +33,7 @@ const CallToAction: React.FC = () => {
               variant="secondary"
               size="lg"
               className="shadow-xl"
+              onClick={handleClick}
             >
               Get in Touch Today
             </Button>

@@ -6,11 +6,14 @@ import HomePage from './pages/HomePage';
 import ServicesPage from './pages/ServicesPage';
 import ProjectsPage from './pages/ProjectsPage';
 import ContactPage from './pages/ContactPage';
+import ScrollToTop from './components/scrollToTop/scrollToTop';
 
-function App() {
+
+const App: React.FC = () => {
   return (
     <ThemeProvider>
       <Router>
+        <ScrollToTop />
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -22,6 +25,6 @@ function App() {
       </Router>
     </ThemeProvider>
   );
-}
+};
 
 export default App;
