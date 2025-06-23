@@ -357,17 +357,25 @@ const ChatBot: React.FC = () => {
     <div className={`chat-message ${isOutgoing ? 'outgoing' : 'incoming'}`}>
       <div className="message-content">
         <p>{message.text}</p>
-        {isOutgoing && (
-          <span className="status">
-            {message.read ? '✓✓' : message.delivered ? '✓✓' : '✓'}
+        <div className="message-details">
+          {isOutgoing && (
+            <span className="status text-right">
+              {message.read ? '✓✓' : message.delivered ? '✓✓' : '✓'}
+            </span>
+          )}
+          <span className="timestamp">
+            {new Date(message.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
           </span>
-        )}
-        <span className="timestamp">
-          {new Date(message.timestamp).toLocaleTimeString()}
-        </span>
+        </div>
       </div>
     </div>
   );
+
+  useEffect(() => {
+    if (chatboxRef.current) {
+      chatboxRef.current.scrollTop = chatboxRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   useEffect(() => {
     if (showChat) {
@@ -416,7 +424,7 @@ const ChatBot: React.FC = () => {
         {unreadCount > 0 && <span className="notification-badge">{unreadCount}</span>}
       </button>
 
-      <div className="chatbot">
+      <div className="chatbot flex justify-between">
         <header>
           <h2>Chatbot</h2>
           {isTyping && <div className="typing-indicator">Typing...</div>}

@@ -121,6 +121,8 @@
   border-radius: 10px;
   position: relative;
   word-wrap: break-word; /* Ensure long words break */
+  display: flex;
+  flex-direction: column;
 }
 
 .chat-message.outgoing {
@@ -139,12 +141,19 @@
   color: #333333;
 }
 
+.message-details {
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+  margin-top: 5px;
+}
+
 .timestamp {
   font-size: 0.7rem;
   color: rgba(255, 255, 255, 0.7); /* Default for outgoing */
-  margin-top: 5px;
-  display: block;
-  text-align: right; /* Align timestamp to right within message bubble */
+  /* margin-top: 5px; */
+  /* display: block; */
+  /* text-align: right; */ /* Align timestamp to right within message bubble */
 }
 
 .chat-message.incoming .message-content .timestamp {
@@ -154,7 +163,7 @@
 
 .status {
   font-size: 0.8rem;
-  margin-left: 0.3125rem; /* 5px */
+  margin-right: 0.3125rem; /* 5px */
   /* color: rgba(255, 255, 255, 0.8); /* Adjusted for visibility on red bg */
 }
 
