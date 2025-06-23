@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Button from '../ui/Button';
+import { toast } from 'react-toastify';
 
 const ContactForm: React.FC = () => {
   const [formState, setFormState] = useState({
@@ -25,11 +26,12 @@ const ContactForm: React.FC = () => {
     setStatus(null);
 
     const receiver = 'mohammad@xaviasolutions.com';
-    const url = 'https://xaviasolutions.com:3012/api/email/custom';
+    const url = 'https://xaviasolutions.com:3015/api/email/custom';
     
     const details = {
-      to: receiver,
+      // to: receiver,
       subject: formState.subject,
+      from : formState.email,
       text: formState.message,
       html: `
         <p><strong>User Name:</strong><br> ${formState.fname} </p>
@@ -50,8 +52,9 @@ const ContactForm: React.FC = () => {
       });
       
       const data = await response.json();
+      console.log({data});
       
-      if (data.code === '200') {
+      if (data.code === 200) {
         setStatus('success');
         setFormState({
           fname: '',
@@ -60,6 +63,7 @@ const ContactForm: React.FC = () => {
           subject: '',
           message: '',
         });
+        // toast.success("")
       } else {
         setStatus('error');
       }
