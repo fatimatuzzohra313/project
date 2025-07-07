@@ -51,7 +51,7 @@ const clients: Client[] = [
   { id: 1, name: 'Squicle', logo: squicleLogo, hasInvertedBg: false },
   { id: 7, name: 'Airify', logo: airifyLogo, hasInvertedBg: false },
   { id: 11, name: 'DigiCard', logo: digicardLogo, hasInvertedBg: false },
-  { id: 17, name: 'Tilism', logo: tilismLogo, hasInvertedBg: false },
+  // { id: 17, name: 'Tilism', logo: tilismLogo, hasInvertedBg: false },
   { id: 2, name: 'Kolabrya', logo: kolabryaLogo },
   { id: 3, name: 'MBites', logo: mbitesLogo },
   { id: 4, name: 'OneStop', logo: onestopLogo },

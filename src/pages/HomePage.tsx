@@ -6,16 +6,19 @@ import Testimonials from '../components/home/Testimonials';
 import CallToAction from '../components/home/CallToAction';
 import ChatBot from './ChatBot';
 import ClientsSlider from '../components/home/Client';
+import PartnersSlider from '../components/home/Partner';
 
 const HomePage: React.FC = () => {
   return (
     <>
       <Hero />
-      <ClientsSlider/>
+      <PartnersSlider />
+      <ClientsSlider />
+
       <FeaturedServices />
       <FeaturedProjects />
       {/* <Testimonials /> */}
-     
+
       <CallToAction />
     </>
   );
